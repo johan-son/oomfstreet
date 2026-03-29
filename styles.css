@@ -12,7 +12,8 @@ body {
 }
 
 img {
-    mix-blend-mode: normal;
+    user-select: none;
+    pointer-events: none;
 }
 
 /*container styling for layout*/
