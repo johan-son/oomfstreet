@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=<device-width>, initial-scale=1" />
+        <title>About Oomf St.</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+        <!--note to self: internal css overrides the linked style sheet. mashallah.-->
+        <style>
+            main {
+                grid-area: main;
+                background: var(--white);
+                padding-top: 0em;
+            }
+            .container {
+                display: grid;
+                background-color: var(--white);
+                min-height: 100vh;
+                gap: 0;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 1fr 60px;
+                grid-template-areas:
+                    "hd"
+                    "main"
+                    "ft";
+            }
+            .abouttext {
+                width: 60%;
+            }
+
+            h2 {
+                font-family: "Xanh Mono", monospace;
+                font-style:;
+                font-size: 1.6em;
+                padding: 1em;
+            }
+
+            .back h2 {
+                padding: 0;
+            }
+        </style>
+        <!--style ends here-->
+    </head>
+    <body>
+        <div class="container">
+            <header style="background-color: var(--white)"><h1>About Oomf St.</h1></header>
+            <main>
+                <div class="abouttext">
+                    <p style="font-size: 1.3em; padding: 1em; top; position: a">
+                        <i>Oomf St.</i> (pronounced oomph street) is a project spatially visualising my network of
+                        online friends;
+                        <i
+                            >we might live hundreds and thousands of miles away from each other, but we are still
+                            neighbours!</i
+                        >
+                        While the internet is not a "true" physical brick-and-mortar place, it's the memories and
+                        experiences that make a place a <i>place</i>. <br /><br />
+
+                        <i>OOMF</i> stands for <i>One Of My Followers</i>, but can also stand for
+                        <i>One Of My Friends</i>. This website is dedicated to the online friends I've made throughout
+                        the past six years <br />
+                        &#60;3 <br />
+                        <br />
+                        This was done as part of experimentation for visual communication design honours.
+                    </p>
+                </div>
+
+                <!--back button sign-->
+                <div class="back">
+                    <h2><a href="sign.html">back?</a></h2>
+                </div>
+            </main>
+            <footer>
+                <p>Johan Son 2026</p>
+            </footer>
+        </div>
+
+        <!--
+        <h1 class="title">Hello World</h1>
+        <div id="mainDiv">Hello Div</div>
+        <br />
+        <button onclick="buttonClicked()">Click me</button>
+        -->
+
+        <!--for tghe collapsible - only needs internal js lol-->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

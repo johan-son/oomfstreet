@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=<device-width>, initial-scale=1" />
+        <title>Oomf St.</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+        <!--note to self: internal css overrides the linked style sheet. mashallah.-->
+        <style>
+            main {
+                grid-area: main;
+                background: var(--white);
+                opacity: 100%;
+                padding-top: 0em;
+            }
+            .container {
+                display: grid;
+
+                min-height: 97vh;
+                gap: 0;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 1fr 60px;
+                grid-template-areas:
+                    "hd"
+                    "main"
+                    "ft";
+            }
+            h2 {
+                font-family: "Xanh Mono", monospace;
+                font-style:;
+                font-size: 1.6em;
+                padding: 1em;
+            }
+
+            /*btw the sign bg div doesnt need to have a colour, its just there so it can be moved*/
+            .sign {
+                background-color: rgba(255, 250, 250, 0);
+                margin: 1em;
+                width: 500px;
+                text-align: left;
+            }
+
+            .sign a:hover {
+                background-color: var(--color2);
+                color: var(--black);
+            }
+
+            .sign a {
+                text-decoration: none;
+            }
+        </style>
+        <!--style ends here-->
+    </head>
+    <body>
+        <div class="container">
+            <header style="background-color: var(--white)"><h1>Welcome to Oomf Street</h1></header>
+            <main>
+                <p style="font-size: 1.3em; padding: 1em">
+                    This is a website dedicated to my online friends, done as a part of my experimentation for visual
+                    communication honours. <br /><br>
+                    This website was also not optimised for most other screen ratios. Please view this on desktop for
+                    the most authentic possible experience.
+                </p>
+                <p style="font-size: 2em; padding-left: 1em; color: var(--color2)"><a href="sign.html">Proceed</a></p>
+
+            </main>
+            <footer>
+                <p>Johan Son 2026</p>
+            </footer>
+        </div>
+
+        <!--
+        <h1 class="title">Hello World</h1>
+        <div id="mainDiv">Hello Div</div>
+        <br />
+        <button onclick="buttonClicked()">Click me</button>
+        -->
+
+        <!--for tghe collapsible - only needs internal js lol-->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

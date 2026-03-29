@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Xanh+Mono:ital@0;1&display=swap");
+
+:root {
+    --black: #33091a;
+    --white: #f8f7eb;
+    --color1: #ffb0be;
+    --color2: #4dc686;
+}
+
+body {
+    background-color: var(--white);
+}
+
+img {
+    mix-blend-mode: normal;
+}
+
+/*container styling for layout*/
+.container {
+    display: grid;
+    /*background-image: url(https://i.ibb.co/mr35yt5G/img-2026-03-24-14-34-18.png);*/
+    background-size: 40%;
+    min-height: 460vh;
+    gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 60px;
+    grid-template-areas:
+        "hd"
+        "main"
+        "ft";
+}
+
+/*everything else styling*/
+header {
+    grid-area: hd;
+    /*background: var(--white);*/
+    padding-left: 2em;
+}
+
+main {
+    grid-area: main;
+    /*background: var(--white);*/
+    padding: 1em;
+}
+footer {
+    bottom: 1em;
+    grid-area: ft;
+    /*background: #edebf8;*/
+    background-color: var(--white);
+    padding: 1em;
+}
+/*btw the sign bg div doesnt need to have a colour, its just there so it can be moved*/
+.sign {
+    background-color: var(--color2);
+    margin: 1em;
+    width: 200px;
+    text-align: left;
+}
+
+.sign a:hover {
+    background-color: bisque;
+}
+
+.sign a {
+    text-decoration: none;
+}
+
+/*\styling for back button*/
+.back {
+    position: fixed;
+    border-radius: 3px;
+    background-color: var(--color2);
+    padding-left: 2em;
+    width: 100px;
+    left: 0;
+    bottom: 0;
+    font-size: 80%;
+}
+.back:hover {
+    background-color: var(--color1);
+}
+.back:visited {
+    color: var(--black);
+}
+.back a {
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Xanh Mono", monospace;
+    font-size: 1.6em;
+}
+
+/*collapsible styling*/
+.collapsible {
+    font-family: "Xanh Mono", monospace;
+    color: var(--black);
+    cursor: pointer;
+    padding: 1em;
+    width: 20%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+/*for some reason buttons have this really stupit native bevel appearance*/
+button {
+    background-color: var(--white);
+    border-color: var(--color2);
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+/*active and hover colour*/
+.active,
+.collapsible:hover {
+    background-color: var(--color2);
+}
+
+.content {
+    padding: 0 1em;
+    display: none;
+    overflow: hidden;
+    margin-bottom: 1em;
+    background-color: var(--white);
+    border-color: var(--color2);
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: dashed;
+}
+
+h1 {
+    font-family: "Xanh Mono", monospace;
+    font-style: italic;
+    font-size: 3em;
+    color: var(--black);
+}
+
+p {
+    color: var(--black);
+    font-family: "EB Garamond", serif;
+    font-size: 1.05em;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
+
+/*each of the houses*/
+.house {
+    position: absolute;
+    width: 450px;
+}
+
+/*media query for smaller screens*/
+@media (max-width: 768px) {
+    .container {
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "hd"
+            "main"
+            "ft";
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .house {
+        position: static;
+        width: 400px;
+    }
+
+    .collapsible {
+        margin: 0.2em;
+        width: 80%;
+    }
+
+    header {
+        height: 1em;
+    }
+
+    footer {
+        display: none;
+    }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=<device-width>, initial-scale=1" />
+        <title>Oomf St.</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+        <!--note to self: internal css overrides the linked style sheet. mashallah.-->
+        <style>
+            main {
+                grid-area: main;
+                background: var(--white);
+                opacity: 100%;
+                padding-top: 0em;
+            }
+            .container {
+                display: grid;
+
+                min-height: 97vh;
+                gap: 0;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 1fr 60px;
+                grid-template-areas:
+                    "hd"
+                    "main"
+                    "ft";
+            }
+            h2 {
+                font-family: "Xanh Mono", monospace;
+                font-style:;
+                font-size: 1.6em;
+                padding: 1em;
+            }
+
+            /*btw the sign bg div doesnt need to have a colour, its just there so it can be moved*/
+            .sign {
+                background-color: rgba(255, 250, 250, 0);
+                margin: 1em;
+                width: 500px;
+                text-align: left;
+            }
+
+            .sign a:hover {
+                background-color: var(--color2);
+                color: var(--black);
+            }
+
+            .sign a {
+                text-decoration: none;
+            }
+        </style>
+        <!--style ends here-->
+    </head>
+    <body>
+        <img src="img/sign.png" style="position: absolute; height: 110%; left: 219px; bottom: 0px" />
+
+        <div class="container">
+            <header style="background-color: var(--white)"><h1>Where are we headed?</h1></header>
+            <main>
+                <p style="font-size: 1.3em; padding: 1em; top; position: a">
+                    A love letter to the place where I met many of my friends.
+                </p>
+
+                <!--oomf street-->
+                <div class="sign" style="position: absolute; top: -12px; right: 345px; rotate: 2deg">
+                    <h2 style="font-size: 5em; color: var(--color1)"><a href="street.html">Oomf St.</a></h2>
+                </div>
+
+                <!--about-->
+                <div class="sign" style="position: absolute; top: 203px; right: 345px; rotate: 2deg">
+                    <h2 style="font-size: 5em; color: var(--color1)"><a href="about.html">About</a></h2>
+                </div>
+            </main>
+            <footer>
+                <p>Johan Son 2026</p>
+            </footer>
+        </div>
+
+        <!--
+        <h1 class="title">Hello World</h1>
+        <div id="mainDiv">Hello Div</div>
+        <br />
+        <button onclick="buttonClicked()">Click me</button>
+        -->
+
+        <!--for tghe collapsible - only needs internal js lol-->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
